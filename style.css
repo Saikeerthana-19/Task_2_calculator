@@ -1,0 +1,124 @@
+:root {
+    --bg: rgba(255, 255, 255, 0.233);
+    --text: #8f0dda;
+    --btn-bg: rgba(255, 255, 255, 0.406);
+    --btn-hover: rgba(255, 255, 255, 0.742);
+    --accent: #0be46d;
+    --shadow: 0 4px 30px rgba(0, 255, 234, 0.2);
+  }
+  
+  body.light {
+    --bg: rgba(255, 255, 255, 0);
+    --text: #000000;
+    --btn-bg: rgba(0, 0, 0, 0.05);
+    --btn-hover: rgba(0, 0, 0, 0.1);
+    --accent: #fa6782;
+    --shadow: 0 4px 30px rgba(255, 77, 109, 0.3);
+  }
+  
+  body {
+    background: linear-gradient(to right, #1fa794, #7efc9f);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    flex-direction: column;
+  }
+  
+  .calculator {
+    background: var(--bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    width: 330px;
+    max-width: 90%;
+  }
+  
+  #display {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  
+  button.btn {
+    background: var(--btn-bg);
+    color: var(--text);
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  button.btn:hover {
+    background: var(--btn-hover);
+  }
+  
+  .equal {
+    background: var(--accent);
+    color: #fffffff0;
+    grid-row: span 2;
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .theme-toggle input {
+    display: none;
+  }
+  
+  .theme-toggle .slider {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .theme-toggle .slider::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 20px;
+    width: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .theme-toggle input:checked + .slider::before {
+    transform: translateX(25px);
+  }
+  
+  .theme-toggle input:checked + .slider {
+    background: #666;
+  }
+  
